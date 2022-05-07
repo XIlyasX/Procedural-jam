@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-	UIManager uiManage;
+	public UIManager uiManage;
 	public float transitionTime;
 
 	public bool isHumanKilled;
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
+		uiManage = FindObjectOfType<UIManager>();
 		isHumanKilled = false;
 		_camera = Camera.main.gameObject;
 		player = FindObjectOfType<PlayerMovement>().gameObject;
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
 	{
 		player.GetComponent<Possessing>().timer = player.GetComponent<Possessing>().possessDelay;
 		isHumanKilled = true;
-		uiManage = FindObjectOfType<UIManager>();
+		//uiManage = FindObjectOfType<UIManager>();
 	}
 
 	public void Awake()

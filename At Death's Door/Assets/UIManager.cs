@@ -13,12 +13,14 @@ public class UIManager : MonoBehaviour
 
     public GameObject tutorial1, tutorial2;
 
+    public GameObject player;
+
     public TextMeshProUGUI possessTimer;
 
-    GameManager manager;
+    public GameManager manager;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(!Stats.hasDiedOnce)
 		{
@@ -31,7 +33,7 @@ public class UIManager : MonoBehaviour
             tutorial2.SetActive(true);
 		}
         manager = FindObjectOfType<GameManager>();
-
+        //player = FindObjectOfType<PlayerMovement>().gameObject;
         goal.text = goalValue.ToString();
         possessTimer.text = 0.ToString();
     }
