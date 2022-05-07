@@ -348,11 +348,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1168917204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9f4094c73ed6c4c8b8231fec3556fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f45f8b565cd2eb4181d4b0089438d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possessed: 1
-  speed: 90
+  parentTransform: {fileID: 1168917209}
+  isAHumanKilled: 0
+  runAwaySpeed: 5
+  walkingSpeed: 2
+  isPossessed: 0
+  speed: 0
+  jumpForce: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  arrow: {fileID: 0}
+  possessScript: {fileID: 0}
 --- !u!50 &1168917206
 Rigidbody2D:
   serializedVersion: 4

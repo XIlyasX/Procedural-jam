@@ -4,36 +4,75 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
-    public float rotateSpeed;
+	public float moveSpeed = 7;
+	public float smoothMoveTime = .1f;
+	public float turnSpeed = 8;
 
-    Rigidbody2D rb;
+	float angle;
+	float smoothInputMagnitude;
+	float smoothMoveVelocity;
+	Vector2 velocity;
 
-    Vector2 input;
+	new Rigidbody2D rigidbody;
 
-    Vector3 nullVector = Vector2.zero;
+	void Start()
+	{
+		rigidbody = GetComponent<Rigidbody2D>();
+	}
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+	void Update()
+	{
+		Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+		float inputMagnitude = inputDirection.magnitude;
+		smoothInputMagnitude = Mathf.SmoothDamp(smoothInputMagnitude, inputMagnitude, ref smoothMoveVelocity, smoothMoveTime);
 
-    private void Update()
-    {
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
-        input *= 10;
-    }
+		float targetAngle = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg - 90f;
+		angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * turnSpeed * inputMagnitude);
 
-    private void FixedUpdate()
-    {
-        Vector2 direction = (rb.position + input) - rb.position;
-        direction.Normalize();
+		velocity = inputDirection * moveSpeed * smoothInputMagnitude;
+		print(velocity);
+	}
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        if(direction.magnitude > 0)
-            rb.rotation = angle;
+	void FixedUpdate()
+	{
+		//rigidbody.MoveRotation(Quaternion.Euler(Vector2.up * angle));
+		rigidbody.rotation = angle;
+		rigidbody.MovePosition(rigidbody.position + velocity * Time.deltaTime);
+	}
 
-        rb.velocity = input.normalized * speed;
-    }
+	//3BOUD'S PREVIOUS CODE
+
+	//public float speed;
+	//public float rotateSpeed;
+
+	//Rigidbody2D rb;
+	//float interpolation;
+
+	//Vector2 input;
+
+	//Vector3 nullVector = Vector2.zero;
+
+	//private void Start()
+	//{
+	//	rb = GetComponent<Rigidbody2D>();
+	//}
+
+	//private void Update()
+	//{
+	//	input.x = Input.GetAxisRaw("Horizontal");
+	//	input.y = Input.GetAxisRaw("Vertical");
+	//	input *= 10;
+	//}
+
+	//private void FixedUpdate()
+	//{
+	//	Vector2 direction = (rb.position + input) - rb.position;
+	//	direction.Normalize();
+
+	//	float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+	//	if (direction.magnitude > 0)
+	//		rb.rotation = angle;
+
+	//	rb.velocity = input.normalized * speed;
+	//}
 }
