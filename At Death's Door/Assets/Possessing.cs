@@ -29,6 +29,7 @@ public class Possessing : MonoBehaviour
             transform.position = activeHuman.position;
         }
 
+        if (doesPossess) return;
         if (humanInRange)
         {
             if (Input.GetKeyDown(KeyCode.Space))
