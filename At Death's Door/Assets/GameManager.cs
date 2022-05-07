@@ -9,10 +9,27 @@ public class GameManager : MonoBehaviour
 	UIManager uiManage;
 	public float transitionTime;
 
+	public bool isHumanKilled;
+
+	public GameObject _camera;
+	public GameObject player;
+
+	private void Start()
+	{
+		isHumanKilled = false;
+		_camera = Camera.main.gameObject;
+		player = FindObjectOfType<PlayerMovement>().gameObject;
+	}
+
+	public void HumanKilled()
+	{
+		player.GetComponent<Possessing>().timer = player.GetComponent<Possessing>().possessDelay;
+		isHumanKilled = true;
+		uiManage = FindObjectOfType<UIManager>();
+	}
+
 	public void Awake()
 	{
-
-
 		Stats.humansKilled = 0;
 
 		DontDestroyOnLoad(gameObject);
@@ -25,11 +42,6 @@ public class GameManager : MonoBehaviour
 			Destroy(gameObject);
 			return;
 		}
-	}
-
-	public void Start()
-	{
-		uiManage = FindObjectOfType<UIManager>();
 	}
 
 	public void Update()
@@ -52,14 +64,8 @@ public class GameManager : MonoBehaviour
 		
 
 	}
-
-	public GameObject _camera;
-
     public void Shake()
     {
         _camera.GetComponent<Animator>().SetTrigger("Shake");
     }
-
-
-
 }

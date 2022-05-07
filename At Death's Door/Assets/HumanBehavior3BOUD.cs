@@ -129,6 +129,7 @@ public class HumanBehavior3BOUD : MonoBehaviour
         if (collision.collider.tag == "Hazard")
         {
             Stats.humansKilled++;
+            manager.HumanKilled();
             // Spawns particle and edits its color
             ParticleSystem particles = Instantiate(humanDeathFx, transform.position, Quaternion.identity);
             //particles.startColor = GetComponent<SkinToneRandomizer>().colors[GetComponent<SkinToneRandomizer>().randomInt];

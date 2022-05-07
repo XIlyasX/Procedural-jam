@@ -15,12 +15,13 @@ public class Possessing : MonoBehaviour
     public GameObject sprite;
 
     [Space]
-    [SerializeField] float possessDelay;
-    float timer;
+    public float possessDelay;
+    [HideInInspector] public float timer;
 
     private void Start()
     {
-        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        manager = FindObjectOfType<GameManager>();
+        timer = possessDelay;
     }
 
     private void Update()
@@ -32,13 +33,13 @@ public class Possessing : MonoBehaviour
         {
             respawnPosition = activeHuman.transform.position;
             transform.position = activeHuman.position;
-            
-            if (timer <= 0)
-            {
-                // GAME OVER LOGIC
-                manager.Shake();
-                this.gameObject.SetActive(false);
-            }
+        }
+
+        if (timer <= 0)
+        {
+            // GAME OVER LOGIC
+            manager.Shake();
+            this.gameObject.SetActive(false);
         }
 
         if (doesPossess) return;
@@ -46,10 +47,7 @@ public class Possessing : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                manager.HumanKilled();
-
                 manager.Shake();
-                timer = possessDelay;
                 respawnPosition = activeHuman.transform.position;
                 activeHuman.GetComponent<HumanBehavior3BOUD>().isPossessed = true;
                 activeHuman.GetComponent<HumanBehavior3BOUD>().possessScript = this;
