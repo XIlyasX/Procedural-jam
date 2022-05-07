@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float rotateSpeed;
 
-    public Transform target;
-
     Rigidbody2D rb;
 
     Vector2 input;
@@ -25,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
         input *= 10;
-        Debug.Log(input);
     }
 
     private void FixedUpdate()
@@ -34,8 +31,9 @@ public class PlayerMovement : MonoBehaviour
         direction.Normalize();
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        if(direction.magnitude > 0)
+            rb.rotation = angle;
 
-        rb.rotation = angle;
         rb.velocity = input.normalized * speed;
     }
 }

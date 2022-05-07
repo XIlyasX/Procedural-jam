@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HumanBehavior : MonoBehaviour
+public class HumanBehavior3BOUD : MonoBehaviour
 {
     Rigidbody2D myParentRigidBody;
     [SerializeField] Transform parentTransform;
@@ -12,7 +12,9 @@ public class HumanBehavior : MonoBehaviour
     [SerializeField] float walkingSpeed = 2f;
     float currentSpeed;
 
-    [SerializeField] bool isPossessed;
+    public bool isPossessed;
+
+    [Space]
 
     // Demon control variables
     [SerializeField] float speed;
@@ -20,6 +22,9 @@ public class HumanBehavior : MonoBehaviour
     [SerializeField] LayerMask groundMask;
     float horizontalInput;
     bool isGrounded;
+    public GameObject arrow;
+
+    [HideInInspector] public Possessing possessScript;
 
     private void Start()
     {
@@ -62,6 +67,7 @@ public class HumanBehavior : MonoBehaviour
     {
         if (!isPossessed)
         {
+            arrow.SetActive(false);
             //Human movement behavior
             if (isAHumanKilled)
             {
@@ -74,6 +80,7 @@ public class HumanBehavior : MonoBehaviour
         }
         else
         {
+            arrow.SetActive(true);
             // Ground cheking
             isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 2f, groundMask);
 
@@ -107,6 +114,15 @@ public class HumanBehavior : MonoBehaviour
         {
             runAwaySpeed = -runAwaySpeed;
             walkingSpeed = -walkingSpeed;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Hazard")
+        {
+            Debug.Log("test");
+            possessScript.ExitBody();
         }
     }
 }
