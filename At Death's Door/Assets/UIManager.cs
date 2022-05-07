@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -22,10 +23,10 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if(!Stats.hasDiedOnce)
+
+        if (!Stats.hasDiedOnce && SceneManager.GetActiveScene().buildIndex == 1) 
 		{
             tutorial1.SetActive(true);
-            
 		}
 		else
 		{
