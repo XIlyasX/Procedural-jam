@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(!finished)
+        if(!finished && !player.GetComponent<Possessing>().doesPossess)
             timer -= Time.deltaTime;
 
         if (timer <= 0)

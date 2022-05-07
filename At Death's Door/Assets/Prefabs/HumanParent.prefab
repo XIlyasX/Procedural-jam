@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 7703454595598959740}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0.044, y: 0.112, z: 0}
-  m_LocalScale: {x: -0.6282005, y: 0.57738626, z: 0.8111824}
+  m_LocalScale: {x: 0.6282005, y: 0.57738626, z: 0.8111824}
   m_Children: []
   m_Father: {fileID: 7703454596082065029}
   m_RootOrder: 1
@@ -299,7 +299,6 @@ MonoBehaviour:
   arrow: {fileID: 7703454595434785963}
   possessScript: {fileID: 0}
   humanDeathFx: {fileID: 7763929723508299097, guid: fdaa7bddbb4c70748a9088e2e5135397, type: 3}
-  SolidCollider: {fileID: 0}
 --- !u!114 &7703454596082065049
 MonoBehaviour:
   m_ObjectHideFlags: 0
