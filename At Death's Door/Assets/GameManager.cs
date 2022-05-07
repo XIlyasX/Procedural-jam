@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool isHumanKilled;
 
     bool finished;
+    bool loosed;
 
     private void Start ()
     {
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
 
         player = FindObjectOfType<PlayerMovement>().gameObject;
         finished = false;
+        loosed = false;
     }
 
     private void Update()
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
+        if (loosed) return;
         Invoke("LoadNextLevel", loadNextLevelDelay);
         canvas.GetComponent<Canvas>().ActiveWinScreen();
         finished = true;
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
         Invoke("ReloadLevel", loadNextLevelDelay);
         canvas.GetComponent<Canvas>().ActiveDeathScreen();
         Shake();
+        loosed = true;
     }
 
     public void LoadNextLevel()
