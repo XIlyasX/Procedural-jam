@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        if(Input.GetKeyDown(KeyCode.R))
+		{
+            ReloadLevel();
+		}
     }
 
     public void Shake ()
