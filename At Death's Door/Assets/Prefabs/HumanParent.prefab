@@ -155,7 +155,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2771fbe6c71133744a1db9d5a70fc7db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -292,13 +292,14 @@ MonoBehaviour:
   walkingSpeed: 1
   isPossessed: 0
   speed: 600
-  jumpForce: 30
+  jumpForce: 20
   groundMask:
     serializedVersion: 2
     m_Bits: 8
   arrow: {fileID: 7703454595434785963}
   possessScript: {fileID: 0}
   humanDeathFx: {fileID: 7763929723508299097, guid: fdaa7bddbb4c70748a9088e2e5135397, type: 3}
+  SolidCollider: {fileID: 0}
 --- !u!114 &7703454596082065049
 MonoBehaviour:
   m_ObjectHideFlags: 0
