@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
 		angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * turnSpeed * inputMagnitude);
 
 		velocity = inputDirection * moveSpeed * smoothInputMagnitude;
-		print(velocity);
 	}
 
 	void FixedUpdate()

@@ -321,3 +321,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doesPossess: 0
+  sprite: {fileID: 3427249167508032030}

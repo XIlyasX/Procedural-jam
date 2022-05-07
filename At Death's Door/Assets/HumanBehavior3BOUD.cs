@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HumanBehavior3BOUD : MonoBehaviour
 {
+    GameManager manager;
+
     Rigidbody2D myParentRigidBody;
     [SerializeField] Transform parentTransform;
 
@@ -26,8 +28,11 @@ public class HumanBehavior3BOUD : MonoBehaviour
 
     [HideInInspector] public Possessing possessScript;
 
+    [SerializeField] ParticleSystem humanDeathFx;
+
     private void Start()
     {
+        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         myParentRigidBody = GetComponentInParent<Rigidbody2D>();
     }
     private void Update()
@@ -121,8 +126,17 @@ public class HumanBehavior3BOUD : MonoBehaviour
     {
         if (collision.collider.tag == "Hazard")
         {
-            Debug.Log("test");
+            // Spawns particle and edits its color
+            ParticleSystem particles = Instantiate(humanDeathFx, transform.position, Quaternion.identity);
+            particles.startColor = GetComponent<SkinToneRandomizer>().colors[GetComponent<SkinToneRandomizer>().randomInt];
+
+            // Shakes camera
+            manager.Shake();
+
+            // Makes the demon exit the player
             possessScript.ExitBody();
+
+            Destroy(this.gameObject);
         }
     }
 }
