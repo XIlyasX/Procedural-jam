@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 204134617}
   m_Layer: 6
   m_Name: Human
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -834,6 +834,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   arrow: {fileID: 101822466}
+  possessScript: {fileID: 0}
 --- !u!61 &204134618
 BoxCollider2D:
   m_ObjectHideFlags: 0
