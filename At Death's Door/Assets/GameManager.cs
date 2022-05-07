@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.R))
 		{
+			Stats.hasDiedOnce = false;
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 
@@ -59,12 +60,18 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator NextLevel()
 	{
+
 		yield return new WaitForSeconds(transitionTime);
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-		
+		LoadLevel();
 
 	}
-    public void Shake()
+	public void LoadLevel()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+	}
+
+	public void Shake()
     {
         _camera.GetComponent<Animator>().SetTrigger("Shake");
     }

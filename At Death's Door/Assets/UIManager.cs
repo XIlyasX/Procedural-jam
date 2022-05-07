@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI score;
     public TextMeshProUGUI goal;
 
+    public GameObject tutorial1, tutorial2;
+
     public TextMeshProUGUI possessTimer;
 
     GameManager manager;
@@ -18,6 +20,16 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(!Stats.hasDiedOnce)
+		{
+            tutorial1.SetActive(true);
+            
+		}
+		else
+		{
+            tutorial1.SetActive(false);
+            tutorial2.SetActive(true);
+		}
         manager = FindObjectOfType<GameManager>();
 
         goal.text = goalValue.ToString();

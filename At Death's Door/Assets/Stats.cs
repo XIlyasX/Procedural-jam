@@ -5,5 +5,7 @@ using UnityEngine;
 public class Stats
 {
 	public static int humansKilled;
+	public static bool hasDiedOnce;
+	public static int timesDied;
 
 }

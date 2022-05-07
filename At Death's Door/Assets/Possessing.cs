@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Possessing : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class Possessing : MonoBehaviour
         if (timer <= 0)
         {
             // GAME OVER LOGIC
+            Stats.hasDiedOnce = true;
+            Invoke("Restart", 2f);
             manager.Shake();
             this.gameObject.SetActive(false);
         }
@@ -56,6 +59,11 @@ public class Possessing : MonoBehaviour
             }
         }
     }
+
+    public void Restart()
+	{
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
