@@ -30,15 +30,16 @@ public class HumanBehavior3BOUD : MonoBehaviour
 
     [SerializeField] ParticleSystem humanDeathFx;
 
-    [SerializeField] BoxCollider2D SolidCollider;
-
     private void Start()
     {
-        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        manager = FindObjectOfType<GameManager>();
         myParentRigidBody = GetComponentInParent<Rigidbody2D>();
     }
     private void Update()
     {
+        isAHumanKilled = manager.isHumanKilled;
+        arrow.SetActive(isPossessed);
+
         if (!isPossessed)
         {
             //FLiping the player dependign on the run away speed
@@ -74,7 +75,6 @@ public class HumanBehavior3BOUD : MonoBehaviour
     {
         if (!isPossessed)
         {
-            arrow.SetActive(false);
             //Human movement behavior
             if (isAHumanKilled)
             {
@@ -87,7 +87,6 @@ public class HumanBehavior3BOUD : MonoBehaviour
         }
         else
         {
-            arrow.SetActive(true);
             // Ground cheking
             isGrounded = Physics2D.BoxCast(new Vector2(transform.position.x, transform.position.y - 0.8f), new Vector2(0.75f, 0.25f), 0f, Vector2.down, 0.2f, groundMask);
 
@@ -128,17 +127,10 @@ public class HumanBehavior3BOUD : MonoBehaviour
     {
         if (collision.collider.tag == "Hazard")
         {
-            Stats.humansKilled++;
             manager.HumanKilled();
-            // Spawns particle and edits its color
+
             ParticleSystem particles = Instantiate(humanDeathFx, transform.position, Quaternion.identity);
-            //particles.startColor = GetComponent<SkinToneRandomizer>().colors[GetComponent<SkinToneRandomizer>().randomInt];
-            particles.startColor = Color.red;
 
-            // Shakes camera
-            manager.Shake();
-
-            // Makes the demon exit the player
             possessScript.ExitBody();
 
             Destroy(this.gameObject);

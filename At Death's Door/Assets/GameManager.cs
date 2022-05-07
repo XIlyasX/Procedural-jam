@@ -5,75 +5,88 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-	public UIManager uiManage;
-	public float transitionTime;
+    public GameObject _camera;
 
-	public bool isHumanKilled;
+    public GameObject humansParent;
+    int humansNumber;
 
-	public GameObject _camera;
-	public GameObject player;
+    public float levelDelay;
+    [HideInInspector] public float timer;
 
-	private void Start()
-	{
-		uiManage = FindObjectOfType<UIManager>();
-		isHumanKilled = false;
-		_camera = Camera.main.gameObject;
-		player = FindObjectOfType<PlayerMovement>().gameObject;
-	}
+    GameObject player;
 
-	public void HumanKilled()
-	{
-		player.GetComponent<Possessing>().timer = player.GetComponent<Possessing>().possessDelay;
-		isHumanKilled = true;
-		//uiManage = FindObjectOfType<UIManager>();
-	}
+    [HideInInspector] public int kills;
 
-	public void Awake()
-	{
-		Stats.humansKilled = 0;
+    [Space]
+    public float loadNextLevelDelay;
 
-		DontDestroyOnLoad(gameObject);
-		if(instance == null)
-		{
-			instance = this;
-		}
-		else
-		{
-			Destroy(gameObject);
-			return;
-		}
-	}
+    [Space]
+    public GameObject canvas;
 
-	public void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.R))
-		{
-			Stats.hasDiedOnce = false;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		}
+    [HideInInspector] public bool isHumanKilled;
 
-		if(Stats.humansKilled ==  uiManage.goalValue)
-		{
-			StartCoroutine(NextLevel());
-		}
-	}
+    bool finished;
 
-	IEnumerator NextLevel()
-	{
+    private void Start ()
+    {
+        timer = levelDelay;
 
-		yield return new WaitForSeconds(transitionTime);
-		LoadLevel();
+        humansNumber = humansParent.transform.childCount;
 
-	}
-	public void LoadLevel()
-	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        player = FindObjectOfType<PlayerMovement>().gameObject;
+        finished = false;
+    }
 
-	}
+    private void Update()
+    {
+        if(!finished)
+            timer -= Time.deltaTime;
 
-	public void Shake()
+        if (timer <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    public void Shake ()
     {
         _camera.GetComponent<Animator>().SetTrigger("Shake");
+    }
+
+    public void HumanKilled()
+    {
+        isHumanKilled = true;
+        humansNumber--;
+        kills++;
+        if(humansNumber <= 0)
+        {
+            Win();
+        }
+
+        Shake();
+    }
+
+    public void Win()
+    {
+        Invoke("LoadNextLevel", loadNextLevelDelay);
+        canvas.GetComponent<Canvas>().ActiveWinScreen();
+        finished = true;
+    }
+
+    public void GameOver()
+    {
+        Invoke("ReloadLevel", loadNextLevelDelay);
+        canvas.GetComponent<Canvas>().ActiveDeathScreen();
+        Shake();
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
