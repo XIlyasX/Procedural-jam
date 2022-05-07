@@ -629,10 +629,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
-    - target: {fileID: 4875988062452552174, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
-      propertyPath: m_Radius
-      value: 0.63
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
 --- !u!4 &2002532804 stripped
