@@ -30,6 +30,8 @@ public class HumanBehavior3BOUD : MonoBehaviour
 
     [SerializeField] ParticleSystem humanDeathFx;
 
+    [SerializeField] BoxCollider2D SolidCollider;
+
     private void Start()
     {
         manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
@@ -87,7 +89,7 @@ public class HumanBehavior3BOUD : MonoBehaviour
         {
             arrow.SetActive(true);
             // Ground cheking
-            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 2f, groundMask);
+            isGrounded = Physics2D.BoxCast(new Vector2(transform.position.x, transform.position.y - 0.8f), new Vector2(0.75f, 0.25f), 0f, Vector2.down, 0.2f, groundMask);
 
             // Demon controlled velocity
             myParentRigidBody.velocity = new Vector2(horizontalInput * speed * Time.deltaTime, myParentRigidBody.velocity.y);
