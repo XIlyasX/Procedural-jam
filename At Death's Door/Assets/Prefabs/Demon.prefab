@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 3427249168890344999}
   - component: {fileID: 3427249168890344994}
   - component: {fileID: 6916159061263421243}
+  - component: {fileID: 4875988062452552174}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Untagged
@@ -271,7 +272,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1.68
 --- !u!50 &3427249168890344999
 Rigidbody2D:
   serializedVersion: 4
@@ -322,3 +323,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doesPossess: 0
   sprite: {fileID: 3427249167508032030}
+--- !u!58 &4875988062452552174
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427249168890344998}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.91
