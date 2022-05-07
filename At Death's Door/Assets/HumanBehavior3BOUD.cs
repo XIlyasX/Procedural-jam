@@ -129,7 +129,7 @@ public class HumanBehavior3BOUD : MonoBehaviour
         {
             manager.HumanKilled();
 
-            ParticleSystem particles = Instantiate(humanDeathFx, transform.position, Quaternion.identity);
+            Instantiate(humanDeathFx, transform.position, Quaternion.identity);
 
             possessScript.ExitBody();
 
