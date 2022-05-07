@@ -14,19 +14,32 @@ public class Possessing : MonoBehaviour
 
     public GameObject sprite;
 
+    [Space]
+    public float possessDelay;
+    [HideInInspector] public float timer;
+
     private void Start()
     {
-        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        manager = FindObjectOfType<GameManager>();
+        timer = possessDelay;
     }
 
     private void Update()
     {
+        timer -= Time.deltaTime;
         sprite.SetActive(!doesPossess);
 
         if (doesPossess)
         {
             respawnPosition = activeHuman.transform.position;
             transform.position = activeHuman.position;
+        }
+
+        if (timer <= 0)
+        {
+            // GAME OVER LOGIC
+            manager.Shake();
+            this.gameObject.SetActive(false);
         }
 
         if (doesPossess) return;
