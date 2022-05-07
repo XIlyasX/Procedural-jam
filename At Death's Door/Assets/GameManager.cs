@@ -10,4 +10,5 @@ public class GameManager : MonoBehaviour
     {
         _camera.GetComponent<Animator>().SetTrigger("Shake");
     }
+
 }
