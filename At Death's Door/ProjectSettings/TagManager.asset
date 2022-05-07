@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Hazard
   - Human
+  - DemonHazard
   layers:
   - Default
   - TransparentFX
