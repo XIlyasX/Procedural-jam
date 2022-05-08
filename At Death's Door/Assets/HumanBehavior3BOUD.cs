@@ -133,6 +133,8 @@ public class HumanBehavior3BOUD : MonoBehaviour
 
             possessScript.ExitBody();
 
+            AudioManager.instance.Play("HumanDeath", AudioManager.AudioPlay.Oneshot);
+
             Destroy(this.gameObject);
         }
     }

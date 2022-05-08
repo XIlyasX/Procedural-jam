@@ -14,6 +14,9 @@ public class Possessing : MonoBehaviour
     bool humanInRange;
 
     public GameObject sprite;
+    public float checkRadius;
+    public LayerMask humans;
+
 
 
     private void Start()
@@ -43,27 +46,89 @@ public class Possessing : MonoBehaviour
                 humanInRange = false;
             }
         }
-    }
+
+		bool nearHuman = Physics2D.OverlapCircle(transform.position, checkRadius, humans);
+		Collider2D col = Physics2D.OverlapCircle(transform.position, checkRadius, humans);
+		if (nearHuman)
+		{
+			print("near human");
+			humanInRange = true;
+
+			if (!doesPossess)
+				activeHuman = col.transform;
+		}
+		else
+		{
+			humanInRange = false;
+		}
+
+		print(doesPossess);
+
+
+	}
+
+    //void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Human")
+    //    {
+    //        print("near human");
+    //        humanInRange = true;
+
+    //        if (!doesPossess)
+    //            activeHuman = collision.transform;
+    //    }
+    //    else
+    //    {
+    //        humanInRange = false;
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Human")
-        {
-            humanInRange = true;
+        //if (other.tag == "Human")
+        //{
+        //    humanInRange = true;
 
-            if(!doesPossess)
-                activeHuman = other.transform;
-        }
+        //    if(!doesPossess)
+        //        activeHuman = other.transform;
+        //}
 
-        if(other.tag == "DemonHazard")
+        if(other.tag == "DemonHazard" && doesPossess == false)
 		{
             
             
                 manager.GameOver();
                 this.gameObject.SetActive(false);
-            
+            AudioManager.instance.Play("HumanDeath", AudioManager.AudioPlay.Oneshot);
+
+
+        }
+        if (other.tag == "DEATH")
+        {
+
+
+            manager.GameOver();
+            AudioManager.instance.Play("HumanDeath", AudioManager.AudioPlay.Oneshot);
+
+            this.gameObject.SetActive(false);
+
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+	{
+        
+
+        if (other.tag == "DemonHazard" && doesPossess == false)
+        {
+
+            AudioManager.instance.Play("HumanDeath", AudioManager.AudioPlay.Oneshot);
+            manager.GameOver();
+            this.gameObject.SetActive(false);
+
+        }
+    }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {

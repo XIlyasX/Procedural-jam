@@ -10,16 +10,16 @@ public class AudioManager : MonoBehaviour
 
 	public static AudioManager instance;
 
-	public enum AudioPlay { Normal, Oneshot};
+	public enum AudioPlay { Normal, Oneshot };
 
 	public void Awake()
 	{
-		
+
 
 
 		DontDestroyOnLoad(gameObject);
 
-		if(instance == null)
+		if (instance == null)
 		{
 			instance = this;
 		}
@@ -39,13 +39,10 @@ public class AudioManager : MonoBehaviour
 			s.source.loop = s.loop;
 		}
 
-		
-	}
-
-	public void Update()
-	{
 
 	}
+
+
 
 	private void Start()
 	{

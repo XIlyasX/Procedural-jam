@@ -248,7 +248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 15, y: -8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2086003995094917896
@@ -279,17 +279,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WIN
+  m_text: "HUMANS \nTORTURED"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 978fab1de158693408dfb57a47aa683e, type: 2}
-  m_sharedMaterial: {fileID: 4618172758061940744, guid: 978fab1de158693408dfb57a47aa683e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fd443f72541fff244ac1d59e09ef5794, type: 2}
+  m_sharedMaterial: {fileID: 5363831223160424585, guid: fd443f72541fff244ac1d59e09ef5794, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190191
+  m_fontColor: {r: 0.4339623, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -306,8 +306,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 147.3
-  m_fontSizeBase: 147.3
+  m_fontSize: 123.82
+  m_fontSizeBase: 123.82
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -413,10 +413,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU ARE DEAD
+  m_text: YOU PERISHED
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 978fab1de158693408dfb57a47aa683e, type: 2}
-  m_sharedMaterial: {fileID: 4618172758061940744, guid: 978fab1de158693408dfb57a47aa683e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fd443f72541fff244ac1d59e09ef5794, type: 2}
+  m_sharedMaterial: {fileID: 5363831223160424585, guid: fd443f72541fff244ac1d59e09ef5794, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -440,8 +440,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95.75
-  m_fontSizeBase: 95.75
+  m_fontSize: 121.7
+  m_fontSizeBase: 121.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -499,7 +499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2086003995137754780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -878,7 +878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2086003995541462082
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1146,7 +1146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2086003995584543523
 RectTransform:
   m_ObjectHideFlags: 0

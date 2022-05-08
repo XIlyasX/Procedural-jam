@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
         loosed = false;
     }
 
+    
+
     private void Update()
     {
         if(!finished && !player.GetComponent<Possessing>().doesPossess)
@@ -84,6 +86,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.SetActive(false);
         Invoke("ReloadLevel", loadNextLevelDelay);
         canvas.GetComponent<Canvas>().ActiveDeathScreen();
         Shake();
@@ -99,4 +103,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void LoadGameAgain()
+	{
+        SceneManager.LoadScene(1);
+	}
 }

@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.84359515
+  m_Radius: 0.6821928
 --- !u!114 &4087098264526909225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4272f893a72b454e877af2036baa37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 10
   smoothMoveTime: 0.1
   turnSpeed: 8
 --- !u!114 &6916159061263421243
@@ -383,3 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doesPossess: 0
   sprite: {fileID: 3427249167508032030}
+  checkRadius: 3
+  humans:
+    serializedVersion: 2
+    m_Bits: 64

@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Human
   - DemonHazard
+  - DEATH
   layers:
   - Default
   - TransparentFX

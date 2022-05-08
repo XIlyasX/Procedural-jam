@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    GameManager manager;
+    //GameManager manager;
 
-    private void Start()
-    {
-        manager = FindObjectOfType<GameManager>();
-    }
+    //private void Start()
+    //{
+    //    manager = FindObjectOfType<GameManager>();
+    //}
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
 
-        if (other.tag == "DemonHazard")
-        {
+    //    if (other.tag == "DemonHazard")
+    //    {
 
 
-            manager.GameOver();
-            this.gameObject.SetActive(false);
+    //        manager.GameOver();
+    //        this.gameObject.SetActive(false);
 
-        }
-    }
+    //    }
+    //}
 }
