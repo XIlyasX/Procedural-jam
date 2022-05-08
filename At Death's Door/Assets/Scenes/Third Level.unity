@@ -771,7 +771,7 @@ Transform:
   m_LocalScale: {x: 1.6409378, y: 1.6409378, z: 1.6409378}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246900296
 GameObject:
@@ -1025,6 +1025,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6df73310cc24e8044a6f955becd8a599, type: 3}
+--- !u!1001 &332254362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1386482288125650975, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_Name
+      value: Demon Hazard Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28841057
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4957552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645696414792302510, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 461c80204c3e4fb4ebc7a0b261d73bfe, type: 3}
 --- !u!1001 &471421142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2077,7 +2146,7 @@ Transform:
   - {fileID: 792077170}
   - {fileID: 1155429526}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &978428528
 GameObject:
@@ -2109,7 +2178,7 @@ Transform:
   - {fileID: 471421143}
   - {fileID: 1536066722}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1098408634
 GameObject:
@@ -2224,7 +2293,7 @@ Transform:
   - {fileID: 1719588448}
   - {fileID: 1756293258}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1155429525
 GameObject:
@@ -2804,7 +2873,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1403869620
 PrefabInstance:
