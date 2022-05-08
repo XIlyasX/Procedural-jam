@@ -54,6 +54,15 @@ public class Possessing : MonoBehaviour
             if(!doesPossess)
                 activeHuman = other.transform;
         }
+
+        if(other.tag == "DemonHazard")
+		{
+            
+            
+                manager.GameOver();
+                this.gameObject.SetActive(false);
+            
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -64,14 +73,14 @@ public class Possessing : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "DemonHazard")
-        {
-            manager.GameOver();
-            this.gameObject.SetActive(false);
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.collider.tag == "DemonHazard")
+    //    {
+    //        manager.GameOver();
+    //        this.gameObject.SetActive(false);
+    //    }
+    //}
 
     public void ExitBody()
     {

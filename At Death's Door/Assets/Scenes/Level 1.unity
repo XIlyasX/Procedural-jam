@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856594017787505329, guid: 6df73310cc24e8044a6f955becd8a599, type: 3}
       propertyPath: m_TagString
-      value: DemonHazard
+      value: Hazard
       objectReference: {fileID: 0}
     - target: {fileID: 4856594017787505331, guid: 6df73310cc24e8044a6f955becd8a599, type: 3}
       propertyPath: m_RootOrder
@@ -628,6 +628,10 @@ PrefabInstance:
     - target: {fileID: 3427249168890344998, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
       propertyPath: m_Name
       value: Demon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875988062452552174, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}

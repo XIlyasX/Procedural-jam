@@ -31,7 +31,9 @@ public class Canvas : MonoBehaviour
     {
         kills.text = manager.kills.ToString();
 
-        timer.text = manager.timer.ToString("0");
+
+
+        timer.text = Mathf.Clamp(manager.timer, 0, manager.timer).ToString("0");
     }
 
     public void ActiveWinScreen()

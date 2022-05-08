@@ -3248,6 +3248,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3427249168890344996, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427249168890344996, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3427249168890344997, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3296,11 +3304,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
+    - target: {fileID: 4875988062452552174, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6916159061263421243, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
       propertyPath: possessDelay
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4875988062452552174, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2320136e9f0b7c84bb1cf3150b5fa980, type: 3}
 --- !u!1 &2001743847
 GameObject:
