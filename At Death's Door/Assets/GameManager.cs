@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void Start ()
     {
+
         timer = levelDelay;
 
         humansNumber = humansParent.transform.childCount;
